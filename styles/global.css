@@ -21,8 +21,16 @@ body {
   @apply text-orange-500;
 }
 
+.secondary_text {
+  color: #2b6cb0;
+}
+
 .primary_bg {
   @apply bg-orange-500;
+}
+
+.secondary_bg {
+  background-color: #2b6cb0;
 }
 
 .dropdown_menu {

@@ -2,7 +2,9 @@ const Home = () => {
   return (
     <section className="flex flex-col items-center max-w-lg mt-10 w-[90%] mx-auto text-center">
       <div className="text-black ">
-        <h1 className="text-5xl font-bold ">Discover and Share</h1>
+        <h1 className="text-5xl font-bold secondary_text ">
+          Discover and Share
+        </h1>
         <p className="primary_text text-5xl font-bold">AI-powered </p>
         <span className="primary_text text-5xl font-bold">Prompts</span>
       </div>
