@@ -12,7 +12,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body className="min-h-screen w-ful bg-bodyBackground ">
+      <body>
         <Navbar />
         <main>{children}</main>
         <Feed />

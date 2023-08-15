@@ -4,6 +4,42 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Sen", "Open Sans", "Sans serif";
+  background-color: #f6f8fa;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.primary_text {
+  @apply text-orange-500;
+}
+
+.primary_bg {
+  @apply bg-orange-500;
+}
+
+.dropdown_menu {
+  @apply absolute right-0 top-full mt-2 w-full p-5 rounded-md bg-white shadow-md min-w-[210px] flex flex-col gap-2 justify-end items-end;
+}
+
+.para_text {
+  @apply text-gray-700;
+}
+
+.btn {
+  @apply px-4 py-1.5 rounded-lg;
+}
+
+.flex_center {
+  @apply flex items-center justify-center;
+}
+.flex_between {
+  @apply flex items-center justify-between;
 }
