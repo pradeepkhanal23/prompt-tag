@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <section className="flex flex-col items-center max-w-lg mt-10 w-[90%] mx-auto text-center">
+    <section className="flex flex-col items-center max-w-4xl px-5 py-10 rounded-lg mt-10 w-[90%] mx-auto text-center shadow-custom">
       <div className="text-black ">
         <h1 className="text-5xl font-bold secondary_text ">
           Discover and Share
