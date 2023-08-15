@@ -2,10 +2,11 @@ import "@styles/global.css";
 import "@components/Navbar";
 import "@components/Feed";
 import Navbar from "@components/Navbar";
+import Provider from "@components/Provider";
 import Feed from "@components/Feed";
 
 export const metadata = {
-  title: "Hashtag",
+  title: "HASHTAG",
   description: "AI powered prompt generator",
 };
 
@@ -13,9 +14,11 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Feed />
+        <Provider>
+          <Navbar />
+          <main>{children}</main>
+          <Feed />
+        </Provider>
       </body>
     </html>
   );

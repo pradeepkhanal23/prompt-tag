@@ -15,11 +15,11 @@ const Navbar = () => {
       const response = await getProviders();
       setProviders(response);
     };
-    // setProviders();
+    setProviders();
   }, []);
   return (
     <nav className=" p-5 flex justify-between items-center w-full ">
-      <div className="flex items-center gap-2 ">
+      <div className="flex items-center gap-1">
         <Link href="/">
           <Image
             src="/assests/images/logo.svg"
