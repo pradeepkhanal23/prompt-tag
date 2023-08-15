@@ -29,7 +29,7 @@ const Navbar = () => {
             className="object-contain"
           />
         </Link>
-        <span className=" text-3xl uppercase font-semibold hidden md:block ">
+        <span className=" text-3xl  uppercase font-semibold hidden md:block ">
           hashtag
         </span>
       </div>
