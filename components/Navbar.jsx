@@ -8,14 +8,14 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 const Navbar = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [providers, setProviders] = useState(null);
-  const isUserLoggedIn = true;
+  const { data: session } = useSession();
 
   useEffect(() => {
-    const setProviders = async () => {
+    const fetchProviders = async () => {
       const response = await getProviders();
       setProviders(response);
     };
-    setProviders();
+    fetchProviders();
   }, []);
   return (
     <nav className=" p-5 flex justify-between items-center w-full ">
@@ -34,7 +34,9 @@ const Navbar = () => {
         </span>
       </div>
 
-      {isUserLoggedIn ? (
+      {/* Desktop view */}
+
+      {session?.user ? (
         <div className="hidden md:flex items-center  space-x-4 cursor-pointer">
           <Link
             href="/create-prompt"
@@ -52,11 +54,11 @@ const Navbar = () => {
 
           <Link href="/profile">
             <Image
-              src="/assests/images/user.svg"
+              src={session?.user.image}
               alt="profile-image"
               width={50}
               height={50}
-              className="rouded-full"
+              className="h-11 w-11 rounded-full border-[#2b6cb0] border-2 p-0.5 "
             />
           </Link>
         </div>
@@ -78,15 +80,16 @@ const Navbar = () => {
         </>
       )}
 
-      <div className="block md:hidden items-center">
-        {isUserLoggedIn ? (
-          <div className="relative">
+      {/* Mobile View */}
+      <div className="flex md:hidden items-center">
+        {session?.user ? (
+          <div className="relative ">
             <Image
-              src="/assests/images/user.svg"
+              src={session?.user.image}
               alt="main-logo"
               width={50}
               height={50}
-              className="object-contain rounded-full"
+              className="h-11 w-11 rounded-full border-[#2b6cb0] border-2 p-0.5 "
               onClick={() => {
                 setToggleDropdown((prev) => !prev);
               }}
