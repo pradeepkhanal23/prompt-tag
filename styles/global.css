@@ -17,6 +17,10 @@ body {
   background-color: #f6f8fa;
 }
 
+.glassmorphism {
+  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+}
+
 .primary_text {
   @apply text-orange-500;
 }
@@ -33,7 +37,7 @@ body {
 }
 
 .dropdown_menu {
-  @apply absolute right-0 top-full mt-2 w-full p-5 rounded-md bg-white shadow-md min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full mt-2 w-full p-5 rounded-md bg-white shadow-custom min-w-[210px] flex flex-col gap-2 justify-end items-end;
 }
 
 .para_text {

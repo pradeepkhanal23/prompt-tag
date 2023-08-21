@@ -29,9 +29,9 @@ const Navbar = () => {
             className="object-contain"
           />
         </Link>
-        <span className=" text-3xl secondary_text  uppercase font-semibold hidden sm:flex ">
-          hashtag
-        </span>
+        <p className=" text-3xl secondary_text  uppercase font-semibold hidden sm:flex ">
+          promp <span className="primary_text">tag</span>
+        </p>
       </div>
 
       {/* Desktop view */}
