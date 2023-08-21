@@ -29,7 +29,7 @@ const Navbar = () => {
             className="object-contain"
           />
         </Link>
-        <span className=" text-3xl secondary_text  uppercase font-semibold hidden md:flex ">
+        <span className=" text-3xl secondary_text  uppercase font-semibold hidden sm:flex ">
           hashtag
         </span>
       </div>
@@ -37,7 +37,7 @@ const Navbar = () => {
       {/* Desktop view */}
       <div className="hidden sm:flex items-center  space-x-4 cursor-pointer">
         {session?.user ? (
-          <div className="flex gap-3 md:gap-5">
+          <div className="flex items-center justify-between gap-x-3">
             <Link
               href="/create-prompt"
               className="text-white primary_bg px-4 py-2 rounded-lg"
