@@ -8,9 +8,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
       </h1>
       <p className="para_text w-full text-xl">
         <q>
-          Embark on a journey through the boundless realms of the mind, guided
-          by the extraordinary capabilities of AI, as you traverse landscapes of
-          creativity that defy the boundaries of human imagination.
+          {type} and share amazing prompts with the world and let your
+          imagination run wild with any AI powered platform.
         </q>
       </p>
 
@@ -24,6 +23,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             id="prompt"
             cols="30"
             rows="10"
+            value={post.prompt}
             className="p-3 rounded-lg focus:outline-orange-500 "
             placeholder="Enter your prompt here......"
             onChange={(e) => {
@@ -38,6 +38,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
             type="text"
             className="p-3 rounded-lg focus:outline-orange-500"
             placeholder="#webdevelopment,#product,#idea...."
+            value={post.tag}
             onChange={(e) => {
               setPost({
                 ...post,
