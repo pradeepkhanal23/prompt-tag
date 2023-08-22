@@ -7,8 +7,11 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         {type} Post
       </h1>
       <p className="para_text w-full text-xl">
-        Create and share amazing prompts with the world, and let your
-        imagination go wild with any AI-powered platform
+        <q>
+          Embark on a journey through the boundless realms of the mind, guided
+          by the extraordinary capabilities of AI, as you traverse landscapes of
+          creativity that defy the boundaries of human imagination.
+        </q>
       </p>
 
       <form onSubmit={handleSubmit} className="para_text">
@@ -44,11 +47,11 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           />
         </div>
 
-        <div className="flex items-center justify-end w-[90%] mx-auto gap-x-10 mt-5 -end">
+        <div className="flex items-center justify-end w-[90%] mx-auto gap-x-4 mt-5 -end">
           <button className="px-8 py-2 rounded-md  primary_bg text-white  cursor-pointer">
             {submitting ? `${type}...` : type}
           </button>
-          <button className="px-8 py-2 rounded-md border border-black cursor-pointer">
+          <button className="px-8 py-2 rounded-md border-2 border-black cursor-pointer">
             Cancel
           </button>
         </div>
