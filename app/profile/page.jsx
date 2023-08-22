@@ -3,14 +3,21 @@
 import Profile from "@components/Profile";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const MyProfile = () => {
   const { data: session } = useSession();
   const [posts, setPosts] = useState([]);
-  const handleEdit = () => {
-    console.log("edit clicked");
+
+  const router = useRouter();
+
+  const handleEdit = async (posts) => {
+    // router.push(`./update-prompt?id=${posts._id}`);
+    posts.map((post) => {
+      return router.push(`./update-prompt?id=${post._id}`);
+    });
   };
-  const handleDelete = () => {
+  const handleDelete = async () => {
     console.log("delete clicked");
   };
 
@@ -31,7 +38,7 @@ const MyProfile = () => {
       name="My"
       desc="Welcome to my personalized profile section"
       data={posts}
-      handleEdit={handleEdit}
+      handleEdit={() => handleEdit(posts)}
       handleDelete={handleDelete}
     />
   );
