@@ -22,6 +22,7 @@ const Navbar = () => {
       <div className="flex items-center gap-1">
         <Link href="/">
           <Image
+            priority="high"
             src="/assests/images/logo.svg"
             alt="main-logo"
             width={50}

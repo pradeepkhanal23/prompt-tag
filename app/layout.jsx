@@ -6,7 +6,7 @@ import Provider from "@components/Provider";
 import Feed from "@components/Feed";
 
 export const metadata = {
-  title: "HASHTAG",
+  title: "prompt-tag",
   description: "AI powered prompt generator",
 };
 
