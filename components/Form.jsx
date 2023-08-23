@@ -2,11 +2,11 @@
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
-    <section className="px-5  border border-gray-200 bg-white/20  py-10 mx-auto mt-10  backdrop-blur-md shadow-custom w-[95%] rounded-lg max-w-5xl flex flex-col  gap-y-5">
-      <h1 className="text-5xl capitalize font-semibold secondary_text">
-        {type} Post
+    <section className="px-5 border border-gray-200 bg-white/10 py-10 mx-auto mt-10  backdrop-blur-md shadow-custom w-[95%] rounded-lg max-w-5xl flex flex-col  gap-y-5">
+      <h1 className="text-4xl capitalize font-semibold secondary_text">
+        {type} <span className="text-orange-500">Post</span>
       </h1>
-      <p className="para_text w-full text-xl">
+      <p className="para_text w-full text-lg">
         <q>
           {type} and share amazing prompts with the world and let your
           imagination run wild with any AI powered platform.

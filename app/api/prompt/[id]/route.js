@@ -52,11 +52,11 @@ export const PATCH = async (request, { params }) => {
 };
 //DELETE
 
-export const DELETE = async ({ params }) => {
+export const DELETE = async (request, { params }) => {
   try {
     await connectToDB();
 
-    await Prompt.findByIdAndDelete(params.id);
+    await Prompt.findByIdAndRemove(params.id);
 
     return new Response("Prompt deleted successfully", {
       status: 200,
