@@ -3,7 +3,6 @@ import "@components/Navbar";
 import "@components/Feed";
 import Navbar from "@components/Navbar";
 import Provider from "@components/Provider";
-import Feed from "@components/Feed";
 
 export const metadata = {
   title: "prompt-tag",

@@ -19,21 +19,19 @@ const Navbar = () => {
   }, []);
   return (
     <nav className=" p-5 flex justify-between items-center w-full ">
-      <div className="flex items-center gap-1">
-        <Link href="/">
-          <Image
-            priority="high"
-            src="/assests/images/logo.svg"
-            alt="main-logo"
-            width={50}
-            height={50}
-            className="object-contain"
-          />
-        </Link>
+      <Link href="/" className="flex items-center gap-1">
+        <Image
+          priority="high"
+          src="/assests/images/logo.svg"
+          alt="main-logo"
+          width={50}
+          height={50}
+          className="object-contain"
+        />
         <p className=" text-3xl secondary_text  uppercase font-semibold hidden sm:flex ">
           promp <span className="primary_text">tag</span>
         </p>
-      </div>
+      </Link>
 
       {/* Desktop view */}
       <div className="hidden sm:flex items-center  space-x-4 cursor-pointer">
