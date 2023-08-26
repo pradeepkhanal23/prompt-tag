@@ -23,7 +23,6 @@ const handler = NextAuth({
       return session;
     },
     secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
-
     //SignIn function which also creates a user automatically in the db in case it doesnot exists
     async signIn({ profile }) {
       try {

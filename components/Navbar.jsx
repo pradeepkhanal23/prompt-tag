@@ -17,6 +17,7 @@ const Navbar = () => {
     };
     fetchProviders();
   }, []);
+
   return (
     <nav className=" p-5 flex justify-between items-center w-full ">
       <Link href="/" className="flex items-center gap-1">
