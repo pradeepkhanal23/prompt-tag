@@ -12,7 +12,9 @@ const MyProfile = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`./api/users/${session?.user.id}/posts`);
+      const response = await fetch(`./api/users/${session?.user.id}/posts`, {
+        "Cache-Control": "no-store", //disable-caching
+      });
 
       const data = await response.json();
 
