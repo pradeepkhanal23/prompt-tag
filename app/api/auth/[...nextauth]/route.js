@@ -10,6 +10,7 @@ const handler = NextAuth({
       clientSecret: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
     }),
   ],
+
   callbacks: {
     //to get the data about the user every single time to keep an existing and running session
     async session({ session }) {
@@ -21,6 +22,7 @@ const handler = NextAuth({
       session.user.id = sessionUser._id.toString();
       return session;
     },
+    secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
 
     //SignIn function which also creates a user automatically in the db in case it doesnot exists
     async signIn({ profile }) {
