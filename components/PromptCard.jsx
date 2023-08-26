@@ -54,14 +54,14 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
         </div>
         <div className="flex flex-col gap-y-2 text-left  ">
           <p className="para_text w-full tracking-tighter ">{post.prompt}</p>
-          <p
-            className="secondary_text w-full cursor-pointer "
+          <span
+            className="secondary_text w-full cursor-pointer break-words"
             onClick={() => {
               handleTagClick && handleTagClick(post.tag);
             }}
           >
             {post.tag}
-          </p>
+          </span>
           {session?.user.id === post.creator._id && pathName === "/profile" && (
             <div className="flex items-center gap-5 justify-end px-3">
               <button
