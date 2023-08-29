@@ -10,7 +10,7 @@ const handler = NextAuth({
       clientSecret: process.env.GOOGLE_API_KEY,
     }),
   ],
-
+  secret: process.env.JWT_SECRET,
   callbacks: {
     //to get the data about the user every single time to keep an existing and running session
     async session({ session }) {

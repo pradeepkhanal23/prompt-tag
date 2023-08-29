@@ -6,7 +6,6 @@ import Provider from "@components/Provider";
 
 export const metadata = {
   title: "prompt-tag",
-  description: "AI powered prompt generator",
 };
 
 const RootLayout = ({ children }) => {
@@ -23,5 +22,3 @@ const RootLayout = ({ children }) => {
 };
 
 export default RootLayout;
-
-// background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
