@@ -50,7 +50,7 @@ const Feed = () => {
         <input
           required
           type="text"
-          className="w-full md:w-2/3  p-3 mb-10 rounded-md shadow-custom outline-orange-500"
+          className="w-full md:w-2/3  p-3 mb-10 rounded-md shadow-custom outline-orange-500 dark:border dark:border-white"
           placeholder="Search for a tag or a username..."
           onChange={handleChange}
           value={searchText}
