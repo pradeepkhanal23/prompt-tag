@@ -3,6 +3,7 @@ import "@components/Navbar";
 import "@components/Feed";
 import Navbar from "@components/Navbar";
 import Provider from "@components/Provider";
+import ToggleTheme from "./providers";
 
 export const metadata = {
   title: "prompt-tag",
@@ -11,11 +12,13 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>
-        <Provider>
-          <Navbar />
-          <main>{children}</main>
-        </Provider>
+      <body className="dark:bg-black/10 dark:text-slate-100 ">
+        <ToggleTheme>
+          <Provider>
+            <Navbar />
+            <main>{children}</main>
+          </Provider>
+        </ToggleTheme>
       </body>
     </html>
   );

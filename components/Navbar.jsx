@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import ThemeChanger from "@app/ThemeChanger";
 
 const Navbar = () => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
@@ -27,15 +28,18 @@ const Navbar = () => {
           alt="main-logo"
           width={50}
           height={50}
-          className="object-contain"
+          className="object-contain "
         />
-        <p className=" text-3xl secondary_text  uppercase font-semibold hidden sm:flex ">
+        <p className=" text-3xl secondary_text  uppercase font-semibold hidden sm:flex dark:text-orange-500">
           promp <span className="primary_text">tag</span>
         </p>
       </Link>
 
       {/* Desktop view */}
       <div className="hidden sm:flex items-center  space-x-4 cursor-pointer">
+        <div>
+          <ThemeChanger />
+        </div>
         {session?.user ? (
           <div className="flex items-center justify-between gap-x-3">
             <Link
@@ -48,7 +52,7 @@ const Navbar = () => {
             <button
               type="button"
               onClick={signOut}
-              className="text-black btn border-2 border-black"
+              className="text-black btn border-2 border-black dark:text-white dark:border-white"
             >
               Sign Out
             </button>
@@ -73,7 +77,7 @@ const Navbar = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className="text-black btn border-2 border-black"
+                  className="text-black btn border-2 border-black dark:text-slate-100 dark:border-white"
                 >
                   Sign in
                 </button>
@@ -84,6 +88,9 @@ const Navbar = () => {
 
       {/* Mobile View */}
       <div className="sm:hidden flex relative">
+        <div className="flex items-center mr-4">
+          <ThemeChanger />
+        </div>
         {session?.user ? (
           <div className="flex">
             <Image
@@ -105,13 +112,13 @@ const Navbar = () => {
                 <Link
                   href="/profile"
                   onClick={() => setToggleDropdown(false)}
-                  className="para_text"
+                  className="dark:text-white para_text"
                 >
                   My Profile
                 </Link>
                 <Link
                   href="/create-prompt"
-                  className="para_text"
+                  className="dark:text-white para_text"
                   onClick={() => setToggleDropdown(false)}
                 >
                   Create Prompt
@@ -139,7 +146,7 @@ const Navbar = () => {
                   onClick={() => {
                     signIn(provider.id);
                   }}
-                  className="text-black btn border-2 border-black"
+                  className="text-black btn border-2 border-black dark:border-2 dark:border-white dark:text-white"
                 >
                   Sign in
                 </button>

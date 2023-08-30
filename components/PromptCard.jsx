@@ -19,7 +19,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
     }, 2000);
   };
   return (
-    <article className="shadow-custom p-4 rounded-md border-gray-400 backdrop-blur-lg bg-white  ">
+    <article className="shadow-custom p-4 rounded-md border-gray-400 backdrop-blur-lg bg-white dark:bg-black/20 dark:border-white dark:border-2 dark:text-slate-200 ">
       <div className="flex flex-col ">
         <div className="flex items-center justify-between gap-x-3 mb-5 ">
           <figure className="flex items-center gap-2">
@@ -53,9 +53,11 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
           </figure>
         </div>
         <div className="flex flex-col gap-y-2 text-left  ">
-          <p className="para_text w-full tracking-tighter ">{post.prompt}</p>
+          <p className="para_text w-full tracking-tighter dark:text-white">
+            {post.prompt}
+          </p>
           <span
-            className="secondary_text w-full cursor-pointer break-words"
+            className="secondary_text w-full cursor-pointer break-words dark:text-blue-400"
             onClick={() => {
               handleTagClick && handleTagClick(post.tag);
             }}

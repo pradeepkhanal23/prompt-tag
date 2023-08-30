@@ -4,17 +4,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  color: #000;
+  background: #f6f8fa;
+}
+
+[data-theme="dark"],
+[data-theme="dark"] body {
+  color: #fff;
+  background: #000;
 }
 
 body {
   font-family: "Sen", "Open Sans", "Sans serif";
   min-height: 100vh;
   width: 100%;
-  background-color: #f6f8fa;
 }
 
 .glassmorphism {
@@ -37,7 +41,7 @@ body {
 }
 
 .dropdown_menu {
-  @apply absolute right-0 top-full mt-2 w-full p-5 rounded-md bg-white shadow-custom min-w-[210px] flex flex-col gap-2 justify-end items-end;
+  @apply absolute right-0 top-full dark:bg-black dark:border-white dark:border-2 dark:text-white mt-2 w-full p-5 rounded-md bg-white shadow-custom min-w-[210px] flex flex-col gap-2 justify-end items-end;
 }
 
 .para_text {
