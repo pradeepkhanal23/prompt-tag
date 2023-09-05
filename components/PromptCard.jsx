@@ -18,11 +18,12 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
       setCopy("");
     }, 2000);
   };
+
   return (
-    <article className="shadow-custom p-4 rounded-md border-gray-400 backdrop-blur-lg bg-white dark:bg-black/20 dark:border-white dark:border-2 dark:text-slate-200 ">
-      <div className="flex flex-col ">
-        <div className="flex items-center justify-between gap-x-3 mb-5 ">
-          <figure className="flex items-center gap-2">
+    <article className="shadow-custom rounded-md px-3 border-gray-400 backdrop-blur-lg bg-white dark:bg-black/20 dark:border-white dark:border-2 dark:text-slate-200 ">
+      <div className="grid grid-cols-1 grid-rows-3 h-full w-full    ">
+        <div className="flex items-center justify-between gap-x-3  ">
+          <div className="flex items-center gap-2">
             <Image
               src={post?.creator.image}
               alt="profile-image"
@@ -34,9 +35,9 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
               <h4 className="self-start font-bold">{post?.creator.username}</h4>
               <p className="text-gray-500">{post?.creator.email}</p>
             </div>
-          </figure>
-          <figure
-            className="h-full w-9 rounded-full bg-gray-100 mb-1 p-2 cursor-pointer "
+          </div>
+          <div
+            className="h-9 w-9 rounded-full bg-gray-100 mb-1 p-2 cursor-pointer "
             onClick={handleCopy}
           >
             <Image
@@ -50,37 +51,41 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
               height={25}
               className="h-full w-full object-contain "
             />
-          </figure>
+          </div>
         </div>
-        <div className="flex flex-col gap-y-2 text-left  ">
+        <div className="w-full h-full text-left  ">
           <p className="para_text w-full tracking-tighter dark:text-white">
             {post.prompt}
           </p>
+        </div>
+
+        <div className="h-auto w-full text-left flex">
           <span
-            className="secondary_text w-full cursor-pointer break-words dark:text-blue-400"
+            className="secondary_text w-full tracking-tighter cursor-pointer self-center break-words dark:text-blue-400 "
             onClick={() => {
               handleTagClick && handleTagClick(post.tag);
             }}
           >
             {post.tag}
           </span>
-          {session?.user.id === post.creator._id && pathName === "/profile" && (
-            <div className="flex items-center gap-5 justify-end px-3">
-              <button
-                className="text-green-500  cursor-pointer drop-shadow-sm"
-                onClick={handleEdit}
-              >
-                Edit
-              </button>
-              <button
-                className="text-red-500 cursor-pointer drop-shadow-sm"
-                onClick={handleDelete}
-              >
-                Delete
-              </button>
-            </div>
-          )}
         </div>
+
+        {session?.user.id === post.creator._id && pathName === "/profile" && (
+          <div className="flex items-center gap-5 justify-end px-3">
+            <button
+              className="text-green-500  cursor-pointer drop-shadow-sm"
+              onClick={handleEdit}
+            >
+              Edit
+            </button>
+            <button
+              className="text-red-500 cursor-pointer drop-shadow-sm"
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
+          </div>
+        )}
       </div>
     </article>
   );
