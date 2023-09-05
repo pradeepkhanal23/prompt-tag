@@ -20,9 +20,9 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
   };
 
   return (
-    <article className="shadow-custom rounded-md px-3 border-gray-400 backdrop-blur-lg bg-white dark:bg-black/20 dark:border-white dark:border-2 dark:text-slate-200 ">
+    <article className="shadow-custom rounded-md p-3 border-gray-400 backdrop-blur-lg bg-white dark:bg-black/20 dark:border-white dark:border-2 dark:text-slate-200 h-auto w-auto">
       <div className="grid grid-cols-1 grid-rows-3 h-full w-full    ">
-        <div className="flex items-center justify-between gap-x-3  ">
+        <div className="flex items-center justify-between gap-x-3">
           <div className="flex items-center gap-2">
             <Image
               src={post?.creator.image}
@@ -71,7 +71,7 @@ const PromptCard = ({ post, handleTagClick, handleDelete, handleEdit }) => {
         </div>
 
         {session?.user.id === post.creator._id && pathName === "/profile" && (
-          <div className="flex items-center gap-5 justify-end px-3">
+          <div className="flex items-center gap-5 justify-end px-3 pb-2">
             <button
               className="text-green-500  cursor-pointer drop-shadow-sm"
               onClick={handleEdit}
